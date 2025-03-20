@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="index.css">
+    <title>Список задач</title> 
+</head>
+<body>
+    <header class="main-header">
+        <h1>Список задач</h1>
+    </header>
+    <div class="task-container">
+        <h2>Новая задача</h2>
+        <div class="input-group">
+            <input type="text" placeholder="Название задачи..." class="task-input">
+            <button class="add-button">+ Добавить</button>
+        </div>
+    </div>
+    
+    <div class="kanban">
+        <div class="column backlog">
+            <h3>Бэклог</h3>
+            <div class="tasks" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div class="task" draggable="true" ondragstart="drag(event)">Выучить JS</div>
+                <div class="task" draggable="true" ondragstart="drag(event)">Выучить React</div>
+                <div class="task" draggable="true" ondragstart="drag(event)">Сделать домашку</div>
+            </div>
+        </div>
+        
+        <div class="column in-progress">
+            <h3>В процессе</h3>
+            <div class="tasks" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div class="task" draggable="true" ondragstart="drag(event)">Выпить смузи</div>
+                <div class="task" draggable="true" ondragstart="drag(event)">Попить воды</div>
+            </div>
+        </div>
+        
+        <div class="column done">
+            <h3>Готово</h3>
+            <div class="tasks" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div class="task" draggable="true" ondragstart="drag(event)">Позвонить маме</div>
+                <div class="task" draggable="true" ondragstart="drag(event)">Погладить кота</div>
+            </div>
+        </div>
+        
+        <div class="column trash">
+            <h3>Корзина</h3>
+            <div class="tasks" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div class="task" draggable="true" ondragstart="drag(event)">Сходить погулять</div>
+                <div class="task" draggable="true" ondragstart="drag(event)">Прочитать Войну и Мир</div>
+            </div>
+            <button class="clear-button">✕ Очистить</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
